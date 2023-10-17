@@ -19,3 +19,11 @@ To specify a specific output file name, one can use something like the following
 ```
   python TLBind.py examples/SARS-CoV-2_peptides_example.csv --out Desired_output_filename.csv
 ```
+
+## Datasets
+
+Since the datasets used for training TLBind are quite large in size to upload to the TLBind repo, we provide the following link to a box with all the files:
+
+<https://rice.box.com/s/ns6ccme8g92sjwswkb03hl036n9d72jv>
+
+This link contains both the raw files, as well as the processes train, validation and test files that were used in the training and evaluation process of TLBind.
