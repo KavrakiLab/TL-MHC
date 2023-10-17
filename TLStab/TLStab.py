@@ -37,7 +37,7 @@ def main(args):
 	args = parser.parse_args()
 
 	# Initialize
-	loader, num_features = get_dataloader_eval(args.input_file[0], BA)
+	loader, num_features = get_dataloader_eval(args.input_file[0], False)
 
 	# Load model and predict for each fold
 	prediction_list = []

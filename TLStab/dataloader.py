@@ -185,7 +185,7 @@ def get_dataloader_eval(path, BA):
         peptide = key.split('-')[0]
         X_length = 15 - len(peptide)
         if X_length > 0:
-            aligned_peptide = peptide + ''.join(['X']*(X_length + np.int(np.floor(X_length / 2)))) + peptide + ''.join(['X']*(X_length + np.int(np.ceil(X_length / 2)))) + peptide
+            aligned_peptide = peptide + ''.join(['X']*(X_length + int(np.floor(X_length / 2)))) + peptide + ''.join(['X']*(X_length + int(np.ceil(X_length / 2)))) + peptide
         else:
             aligned_peptide = ''.join([peptide]*3)
         allele = key.split('-', 1)[1]
