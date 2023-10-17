@@ -3,7 +3,7 @@
 The following repo consists of 2 main tools + an auxiliary one, namely:
 - TLStab
 - TLImm
-- *TLBind
+- TLBind
 
 ## Usage
 
@@ -26,6 +26,6 @@ TLStab is our transfer learning-based pMHC stability predictor. You will find th
 
 TLImm is our transfer learning-based peptide immunogenicity predictor. You will find the corresponding files and instructions on how to use in the `TLImm` folder.
 
-## *TLBind
+## TLBind
 
-TLBind is our pretrained binding affinity/eluted ligard predictor. As, during development, we focused on the downstream tasks of pMHC stability and peptide immunogenicity predictions, TLBind could be underperforming in comparison to state-of-the-art binding affinity predictors. However, it is fully usable if you desire to use it. 
+TLBind is our pretrained binding affinity/eluted ligard predictor. You will find the corresponding files and instructions on how to use in the `TLBind` folder.
