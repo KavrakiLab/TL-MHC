@@ -7,7 +7,9 @@ The following repo consists of 2 main tools + an auxiliary one, namely:
 
 ## Usage
 
-To use these tools, you will need to have either `conda` or `mamba` installed. We highly recommend mamba, as it handles dependencies much faster and more reliably. To install `mamba` follow the instructions [here](https://mamba.readthedocs.io/en/latest/mamba-installation.html). When either `conda` or `mamba` are sucessfully installed, you can create an enviroment by simply running:
+To use these tools, you will need to have either `conda` or `mamba` installed. We highly recommend mamba, as it handles dependencies much faster and more reliably. To install `mamba` follow the instructions [here](https://mamba.readthedocs.io/en/latest/mamba-installation.html). 
+
+First, clone the repo, and get into the main folder of the repo (where this README file is found). When either `conda` or `mamba` are sucessfully installed, you can create an enviroment by simply running:
 
 ```
   mamba env create -f TLenv.yml
