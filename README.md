@@ -29,6 +29,10 @@ or
 ```
 in order to run the tools. 
 
+#### Important note for Windows Installations
+
+It seems that, when using `conda` on Windows, there is a conflict between the `pytorch` installation and with some of the other packages. This happened on us on Windows only. A workaround that worked for us was to remove the `pytorch` entry from the YAML environment file, and install `pytorch` later when into the environment, using a `pytorch` installation command aken from [here](https://pytorch.org/get-started/locally/). Please reach out to us if you have any issues install the required packages. 
+
 ## TLStab
 
 TLStab is our transfer learning-based pMHC stability predictor. You will find the corresponding files and instructions on how to use in the `TLStab` folder. 
