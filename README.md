@@ -31,7 +31,7 @@ in order to run the tools.
 
 #### Important note for Windows Installations
 
-It seems that, when using `conda` on Windows, there is a conflict between the `pytorch` installation and with some of the other packages. This happened on us on Windows only. A workaround that worked for us was to remove the `pytorch` entry from the YAML environment file, and install `pytorch` later when into the environment, using a `pytorch` installation command aken from [here](https://pytorch.org/get-started/locally/). Please reach out to us if you have any issues install the required packages. 
+It seems that, when using `conda` on Windows, there is a conflict between the `pytorch` installation and with some of the other packages. This happened to us on Windows only. A workaround that worked for us was to remove the `pytorch` entry from the YAML environment file, and install `pytorch` later when into the environment, using a `pytorch` installation command aken from [here](https://pytorch.org/get-started/locally/). Please reach out to us if you have any issues installing the required packages. 
 
 ## TLStab
 
