@@ -22,7 +22,8 @@ def forwarding(model, loader):
 	return pd.DataFrame(pred_list, columns =['peptide', 'allele', 'BA_score', 'EL_score'])
 
 def main(args):
-
+	
+	print("Initializing TLBind!")
 	# Input arguments
 	parser = argparse.ArgumentParser(description="TLBind arguments", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument('input_file', type=str, nargs=1, help='Input_file (required!)')
@@ -30,15 +31,19 @@ def main(args):
 	args = parser.parse_args()
 
 	# Initialize loader
+	print("Reading input file")
 	loader, num_features = get_dataloader_eval(args.input_file[0])
 
 	# Load model
 	model = Pretrained_BAEL(num_features = num_features, latent_dim=512) # Latent dimension is 512 for the best model
 	model.load_state_dict(torch.load('./models/Pretrained_BA-EL.pt', map_location=torch.device('cpu')))
-
+	
+	print("Generating predictions...")
 	predictions = forwarding(model, loader)
 
 	output_file = predictions.to_csv(args.out, index=False)
+	print("Output generated in " + args.out)
+	print("End of TLBind!")
 
 if __name__ == "__main__":
     main(sys.argv[1:])

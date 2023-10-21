@@ -29,7 +29,8 @@ def forwarding(model, loader, fold):
 	return pd.DataFrame(pred_list, columns =['peptide', 'allele', 'Stab' + str(fold)])
 
 def main(args):
-
+	
+	print("Initializing TLStab!")
 	# Input arguments
 	parser = argparse.ArgumentParser(description="TLStab arguments", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument('input_file', type=str, nargs=1, help='Input_file (required!)')
@@ -37,8 +38,10 @@ def main(args):
 	args = parser.parse_args()
 
 	# Initialize
+	print("Reading input file")
 	loader, num_features = get_dataloader_eval(args.input_file[0], False)
 
+	print("Generating predictions...")
 	# Load model and predict for each fold
 	prediction_list = []
 	for fold in range(1, 11):
@@ -55,5 +58,8 @@ def main(args):
 	predictions.loc[predictions['Half-life (h)'] < 0, 'Half-life (h)'] = 0.0
 
 	output_file = predictions[['peptide', 'allele', 'Half-life (h)']].to_csv(args.out, index=False)
+	print("Output generated in " + args.out)
+	print("End of TLStab!")
+
 if __name__ == "__main__":
     main(sys.argv[1:])
